@@ -1,0 +1,648 @@
+[
+  {
+    "label": "pris-noK-noOH",
+    "tier": "A",
+    "parent": "pris-water",
+    "K": "noK",
+    "OH": "noOH",
+    "defect": "pris",
+    "note": "Baseline: no K, no OH@Pt (Pt may still bind H2O).",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 130,
+            "from_O": 149,
+            "H": 64
+          }
+        ]
+      },
+      {
+        "op": "no_K_from_water_parent"
+      }
+    ],
+    "metrics": {
+      "formula": "H72O81Pt6Sr9Ti18",
+      "natoms": 186,
+      "nK": 0,
+      "nOH_on_Pt": 0,
+      "K": [],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.9713661892489295,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "pris-Knear-noOH",
+    "tier": "A",
+    "parent": "pris-koh",
+    "K": "Knear",
+    "OH": "noOH",
+    "defect": "pris",
+    "note": "K near Pt without OH@Pt cancellation \u2014 key positive control.",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 131,
+            "from_O": 134,
+            "H": 40
+          },
+          {
+            "oh_O": 135,
+            "from_O": 117,
+            "H": 6
+          }
+        ]
+      },
+      {
+        "op": "keep_K_near"
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O79Pt6Sr9Ti18",
+      "natoms": 180,
+      "nK": 2,
+      "nOH_on_Pt": 0,
+      "K": [
+        {
+          "index": 66,
+          "z": 12.623110830511836,
+          "d_K_Pt_min": 3.1625280844955017
+        },
+        {
+          "index": 67,
+          "z": 12.122391976145098,
+          "d_K_Pt_min": 3.2555817504245645
+        }
+      ],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.971147633279339,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "pris-Kfar-noOH",
+    "tier": "A",
+    "parent": "pris-koh",
+    "K": "Kfar",
+    "OH": "noOH",
+    "defect": "pris",
+    "note": "Distance control: same ions, K far from Pt.",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 131,
+            "from_O": 134,
+            "H": 40
+          },
+          {
+            "oh_O": 135,
+            "from_O": 117,
+            "H": 6
+          }
+        ]
+      },
+      {
+        "op": "swap_K_far_water",
+        "swaps": [
+          {
+            "K": 66,
+            "water_O": 138,
+            "H": [
+              48,
+              49
+            ],
+            "d_K_Pt_after": 6.4891491773247925
+          },
+          {
+            "K": 67,
+            "water_O": 125,
+            "H": [
+              22,
+              23
+            ],
+            "d_K_Pt_after": 6.320595784129223
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O79Pt6Sr9Ti18",
+      "natoms": 180,
+      "nK": 2,
+      "nOH_on_Pt": 0,
+      "K": [
+        {
+          "index": 66,
+          "z": 12.465058885328844,
+          "d_K_Pt_min": 6.4891491773247925
+        },
+        {
+          "index": 67,
+          "z": 14.621964211088521,
+          "d_K_Pt_min": 6.320595784129223
+        }
+      ],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.971147633279339,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "pris-Knear-OHonPt",
+    "tier": "A",
+    "parent": "pris-koh",
+    "K": "Knear",
+    "OH": "OHonPt",
+    "defect": "pris",
+    "note": "Parent pristine-koh: K near + OH@Pt (cancel case).",
+    "ops": [
+      {
+        "op": "keep_K_near"
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O79Pt6Sr9Ti18",
+      "natoms": 180,
+      "nK": 2,
+      "nOH_on_Pt": 2,
+      "K": [
+        {
+          "index": 66,
+          "z": 12.623110830511836,
+          "d_K_Pt_min": 3.1625280844955017
+        },
+        {
+          "index": 67,
+          "z": 12.122391976145098,
+          "d_K_Pt_min": 3.2555817504245645
+        }
+      ],
+      "OH_on_Pt": [
+        {
+          "O": 131,
+          "z": 10.384748421842627,
+          "d_O_Pt_min": 2.282541362675157,
+          "H": [
+            34
+          ]
+        },
+        {
+          "O": 135,
+          "z": 10.428567690510793,
+          "d_O_Pt_min": 2.0860677578460423,
+          "H": [
+            42
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.971147633279339,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-noK-noOH",
+    "tier": "A",
+    "parent": "Vo-water",
+    "K": "noK",
+    "OH": "noOH",
+    "defect": "Vo",
+    "note": "Vo baseline without K / OH@Pt.",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 129,
+            "from_O": 148,
+            "H": 64
+          }
+        ]
+      },
+      {
+        "op": "no_K_from_water_parent"
+      }
+    ],
+    "metrics": {
+      "formula": "H72O80Pt6Sr9Ti18",
+      "natoms": 185,
+      "nK": 0,
+      "nOH_on_Pt": 0,
+      "K": [],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.9713179048900848,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-Knear-noOH",
+    "tier": "A",
+    "parent": "Vo-koh",
+    "K": "Knear",
+    "OH": "noOH",
+    "defect": "Vo",
+    "note": "Vo + K near, no OH@Pt.",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 132,
+            "from_O": 133,
+            "H": 40
+          },
+          {
+            "oh_O": 134,
+            "from_O": 116,
+            "H": 6
+          }
+        ]
+      },
+      {
+        "op": "keep_K_near"
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O78Pt6Sr9Ti18",
+      "natoms": 179,
+      "nK": 2,
+      "nOH_on_Pt": 0,
+      "K": [
+        {
+          "index": 66,
+          "z": 12.624303426113734,
+          "d_K_Pt_min": 3.2387439729548926
+        },
+        {
+          "index": 67,
+          "z": 12.429179391132488,
+          "d_K_Pt_min": 3.3685287058147058
+        }
+      ],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.9692791150630609,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-Kfar-noOH",
+    "tier": "A",
+    "parent": "Vo-koh",
+    "K": "Kfar",
+    "OH": "noOH",
+    "defect": "Vo",
+    "note": "Vo + K far, no OH@Pt.",
+    "ops": [
+      {
+        "op": "protonate_OH_on_Pt",
+        "transfers": [
+          {
+            "oh_O": 132,
+            "from_O": 133,
+            "H": 40
+          },
+          {
+            "oh_O": 134,
+            "from_O": 116,
+            "H": 6
+          }
+        ]
+      },
+      {
+        "op": "swap_K_far_water",
+        "swaps": [
+          {
+            "K": 66,
+            "water_O": 135,
+            "H": [
+              44,
+              45
+            ],
+            "d_K_Pt_after": 6.588885014105087
+          },
+          {
+            "K": 67,
+            "water_O": 137,
+            "H": [
+              48,
+              49
+            ],
+            "d_K_Pt_after": 6.460348508319534
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O78Pt6Sr9Ti18",
+      "natoms": 179,
+      "nK": 2,
+      "nOH_on_Pt": 0,
+      "K": [
+        {
+          "index": 66,
+          "z": 15.137693108992561,
+          "d_K_Pt_min": 6.588885014105087
+        },
+        {
+          "index": 67,
+          "z": 12.308236323699969,
+          "d_K_Pt_min": 6.460348508319534
+        }
+      ],
+      "OH_on_Pt": [],
+      "min_pair_lt_1.2": 0.9692791150630609,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-Knear-OHonPt",
+    "tier": "A",
+    "parent": "Vo-koh",
+    "K": "Knear",
+    "OH": "OHonPt",
+    "defect": "Vo",
+    "note": "Parent Vo-interface-koh: K near + OH@Pt.",
+    "ops": [
+      {
+        "op": "keep_K_near"
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O78Pt6Sr9Ti18",
+      "natoms": 179,
+      "nK": 2,
+      "nOH_on_Pt": 2,
+      "K": [
+        {
+          "index": 66,
+          "z": 12.624303426113734,
+          "d_K_Pt_min": 3.2387439729548926
+        },
+        {
+          "index": 67,
+          "z": 12.429179391132488,
+          "d_K_Pt_min": 3.3685287058147058
+        }
+      ],
+      "OH_on_Pt": [
+        {
+          "O": 132,
+          "z": 10.238583048085772,
+          "d_O_Pt_min": 2.1241953476076425,
+          "H": [
+            38
+          ]
+        },
+        {
+          "O": 134,
+          "z": 10.595345190640606,
+          "d_O_Pt_min": 2.0965998986280323,
+          "H": [
+            42
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.9692791150630609,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "pris-noK-OHonPt",
+    "tier": "B",
+    "parent": "pris-water",
+    "K": "noK",
+    "OH": "OHonPt",
+    "defect": "pris",
+    "note": "OH@Pt only (no K) \u2014 isolates OH penalty.",
+    "ops": [
+      {
+        "op": "no_K_from_water_parent"
+      }
+    ],
+    "metrics": {
+      "formula": "H72O81Pt6Sr9Ti18",
+      "natoms": 186,
+      "nK": 0,
+      "nOH_on_Pt": 1,
+      "K": [],
+      "OH_on_Pt": [
+        {
+          "O": 130,
+          "z": 10.193636182349575,
+          "d_O_Pt_min": 2.1153147097669107,
+          "H": [
+            26
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.9706894243609316,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-noK-OHonPt",
+    "tier": "B",
+    "parent": "Vo-water",
+    "K": "noK",
+    "OH": "OHonPt",
+    "defect": "Vo",
+    "note": "Vo + OH@Pt only.",
+    "ops": [
+      {
+        "op": "no_K_from_water_parent"
+      }
+    ],
+    "metrics": {
+      "formula": "H72O80Pt6Sr9Ti18",
+      "natoms": 185,
+      "nK": 0,
+      "nOH_on_Pt": 1,
+      "K": [],
+      "OH_on_Pt": [
+        {
+          "O": 129,
+          "z": 10.349774747366146,
+          "d_O_Pt_min": 2.153170914642176,
+          "H": [
+            26
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.9713179048900848,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "pris-Kfar-OHonPt",
+    "tier": "B",
+    "parent": "pris-koh",
+    "K": "Kfar",
+    "OH": "OHonPt",
+    "defect": "pris",
+    "note": "OH@Pt + K far \u2014 OH penalty without near-K stabilization.",
+    "ops": [
+      {
+        "op": "swap_K_far_water",
+        "swaps": [
+          {
+            "K": 66,
+            "water_O": 134,
+            "H": [
+              40,
+              41
+            ],
+            "d_K_Pt_after": 8.360628057204028
+          },
+          {
+            "K": 67,
+            "water_O": 117,
+            "H": [
+              6,
+              7
+            ],
+            "d_K_Pt_after": 8.140656561806905
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O79Pt6Sr9Ti18",
+      "natoms": 180,
+      "nK": 2,
+      "nOH_on_Pt": 2,
+      "K": [
+        {
+          "index": 66,
+          "z": 16.039289015929096,
+          "d_K_Pt_min": 8.360628057204028
+        },
+        {
+          "index": 67,
+          "z": 13.504795804420871,
+          "d_K_Pt_min": 8.140656561806905
+        }
+      ],
+      "OH_on_Pt": [
+        {
+          "O": 131,
+          "z": 10.384748421842627,
+          "d_O_Pt_min": 2.282541362675157,
+          "H": [
+            34
+          ]
+        },
+        {
+          "O": 135,
+          "z": 10.428567690510793,
+          "d_O_Pt_min": 2.0860677578460423,
+          "H": [
+            42
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.971147633279339,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  },
+  {
+    "label": "Vo-Kfar-OHonPt",
+    "tier": "B",
+    "parent": "Vo-koh",
+    "K": "Kfar",
+    "OH": "OHonPt",
+    "defect": "Vo",
+    "note": "Vo + OH@Pt + K far.",
+    "ops": [
+      {
+        "op": "swap_K_far_water",
+        "swaps": [
+          {
+            "K": 66,
+            "water_O": 133,
+            "H": [
+              40,
+              41
+            ],
+            "d_K_Pt_after": 8.779066048528342
+          },
+          {
+            "K": 67,
+            "water_O": 116,
+            "H": [
+              6,
+              7
+            ],
+            "d_K_Pt_after": 8.303910286643521
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "formula": "H66K2O78Pt6Sr9Ti18",
+      "natoms": 179,
+      "nK": 2,
+      "nOH_on_Pt": 2,
+      "K": [
+        {
+          "index": 66,
+          "z": 16.427508091240853,
+          "d_K_Pt_min": 8.779066048528342
+        },
+        {
+          "index": 67,
+          "z": 13.28792466746858,
+          "d_K_Pt_min": 8.303910286643521
+        }
+      ],
+      "OH_on_Pt": [
+        {
+          "O": 132,
+          "z": 10.238583048085772,
+          "d_O_Pt_min": 2.1241953476076425,
+          "H": [
+            38
+          ]
+        },
+        {
+          "O": 134,
+          "z": 10.595345190640606,
+          "d_O_Pt_min": 2.0965998986280323,
+          "H": [
+            42
+          ]
+        }
+      ],
+      "min_pair_lt_1.2": 0.9692791150630609,
+      "n_clash_lt_0.60": 0,
+      "n_fixed": 27
+    },
+    "errors": []
+  }
+]
