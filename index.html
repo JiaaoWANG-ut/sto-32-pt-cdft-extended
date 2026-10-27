@@ -132,10 +132,10 @@
         /* 3D Viewer Container */
         .viewer-container {
             position: relative;
-            background: #0f172a;
+            background: #ffffff;
             border-radius: 6px;
             overflow: hidden;
-            border: 1px solid #334155;
+            border: 1px solid #cbd5e1;
             height: 600px;
             box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
         }
@@ -157,21 +157,23 @@
         }
 
         .viewer-btn {
-            background: rgba(15, 23, 42, 0.85);
-            color: #f8fafc;
-            border: 1px solid #475569;
+            background: rgba(255, 255, 255, 0.92);
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
             padding: 6px 12px;
             border-radius: 4px;
             font-family: "Times New Roman", Times, serif;
             font-size: 0.95rem;
             cursor: pointer;
             backdrop-filter: blur(4px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             transition: all 0.2s;
         }
 
         .viewer-btn:hover {
             background: var(--secondary-color);
-            border-color: #60a5fa;
+            color: #ffffff;
+            border-color: var(--secondary-color);
         }
 
         .legend-bar {
@@ -179,15 +181,16 @@
             bottom: 12px;
             left: 12px;
             z-index: 10;
-            background: rgba(15, 23, 42, 0.88);
-            border: 1px solid #475569;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid #cbd5e1;
             border-radius: 4px;
             padding: 6px 12px;
             display: flex;
             gap: 12px;
             align-items: center;
             font-size: 0.9rem;
-            color: #f8fafc;
+            color: #1e293b;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
             flex-wrap: wrap;
         }
 
@@ -455,7 +458,7 @@
                         <div class="legend-item"><span class="color-dot" style="background:#555555;"></span> Pt (铂)</div>
                         <div class="legend-item"><span class="color-dot" style="background:#8f4da0;"></span> K (钾)</div>
                         <div class="legend-item"><span class="color-dot" style="background:#ff2222;"></span> O (氧)</div>
-                        <div class="legend-item"><span class="color-dot" style="background:#ffffff;"></span> H (氢)</div>
+                        <div class="legend-item"><span class="color-dot" style="background:#c0c6cc;"></span> H (氢)</div>
                         <div class="legend-item"><span class="color-dot" style="background:#00bb22;"></span> Sr (锶)</div>
                         <div class="legend-item"><span class="color-dot" style="background:#808090;"></span> Ti (钛)</div>
                     </div>
@@ -806,7 +809,7 @@
             Pt: { color: "#555555", radius: 0.65 },
             K:  { color: "#8f4da0", radius: 0.65 },
             O:  { color: "#ff2222", radius: 0.35 },
-            H:  { color: "#ffffff", radius: 0.22 },
+            H:  { color: "#c0c6cc", radius: 0.22 },
             Sr: { color: "#00bb22", radius: 0.65 },
             Ti: { color: "#808090", radius: 0.50 }
         };
@@ -830,7 +833,7 @@
         function initViewer() {
             const container = document.getElementById("gview");
             glviewer = $3Dmol.createViewer(container, {
-                backgroundColor: "#0f172a"
+                backgroundColor: "#ffffff"
             });
             renderModel(currentModel);
         }
