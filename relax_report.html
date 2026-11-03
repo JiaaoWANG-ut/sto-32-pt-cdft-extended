@@ -23,8 +23,8 @@ code{font-family:"Courier New",monospace;font-size:14px;background:#f2f2f2;paddi
 small{color:#555}
 </style></head><body>
 <header><h1 data-zh="Pt₆/SrTiO₃ 12 模型几何优化报告" data-en="Pt₆/SrTiO₃ 12-model geometry-relaxation report"></h1>
-<div data-zh="GPAW 26.7 · PBE+D3 · BFGS · 收敛判据 fmax &lt; 0.05 eV/Å · 生成时间 2026-11-03 13:22 (PST)"
-     data-en="GPAW 26.7 · PBE+D3 · BFGS · convergence fmax &lt; 0.05 eV/Å · generated 2026-11-03 13:22 (PST)"></div>
+<div data-zh="GPAW 26.7 · PBE+D3 · BFGS · 收敛判据 fmax &lt; 0.05 eV/Å · 生成时间 2026-11-03 13:23 (PST)"
+     data-en="GPAW 26.7 · PBE+D3 · BFGS · convergence fmax &lt; 0.05 eV/Å · generated 2026-11-03 13:23 (PST)"></div>
 <button id="lang" onclick="toggleLang()">English</button></header>
 <main>
 
@@ -180,7 +180,7 @@ function parse(xyz){const ln=xyz.split('\n');const cell=ln[1].split(/\s+/).slice
 function draw(reset){const r=D[cur],k=document.getElementById('selState').value,{cell,at}=parse(r.structs[k]);
  if(!viewer)viewer=$3Dmol.createViewer('viewer',{backgroundColor:'white'});
  const v=viewer;v.removeAllModels();v.removeAllShapes();v.removeAllLabels();
- const m=v.addModel();m.addAtoms(at.map(a=>({elem:a.e,x:a.x,y:a.y,z:a.z})));
+ v.addModel(at.length+'\n\n'+at.map(a=>`${a.e} ${a.x} ${a.y} ${a.z}`).join('\n'),'xyz');
  const rad={Pt:0.42,Sr:0.45,Ti:0.35,O:0.28,H:0.16,K:0.5};
  v.setStyle({},{stick:{radius:0.12,colorscheme:'Jmol'},sphere:{scale:0.3,colorscheme:'Jmol'}});
  for(const e in rad)v.setStyle({elem:e},{stick:{radius:0.12,color:COL[e]},sphere:{radius:rad[e],color:COL[e]}});
